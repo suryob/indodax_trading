@@ -27,7 +27,7 @@ CREATE TABLE IF NOT EXISTS `config` (
 /*!40000 ALTER TABLE `config` DISABLE KEYS */;
 INSERT INTO `config` (`key`, `value`) VALUES
 	('nonce', '0');
-/*!40000 ALTER TABLE `config` ENABLE KEYS */;
+
 
 -- Dumping structure for table koinkoin.countgl
 CREATE TABLE IF NOT EXISTS `countgl` (
@@ -42,7 +42,6 @@ CREATE TABLE IF NOT EXISTS `countgl` (
 
 -- Dumping data for table koinkoin.countgl: ~0 rows (approximately)
 /*!40000 ALTER TABLE `countgl` DISABLE KEYS */;
-/*!40000 ALTER TABLE `countgl` ENABLE KEYS */;
 
 -- Dumping structure for table koinkoin.harga
 CREATE TABLE IF NOT EXISTS `harga` (
@@ -58,11 +57,10 @@ CREATE TABLE IF NOT EXISTS `harga` (
 
 -- Dumping data for table koinkoin.harga: ~0 rows (approximately)
 /*!40000 ALTER TABLE `harga` DISABLE KEYS */;
-/*!40000 ALTER TABLE `harga` ENABLE KEYS */;
 
 -- Dumping structure for procedure koinkoin.insert_harga
 DELIMITER //
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_harga`(
+CREATE PROCEDURE `insert_harga`(
 	IN `p_koin_id` INT,
 	IN `p_harga` DOUBLE,
 	IN `p_harga_beli` DOUBLE,
@@ -89,7 +87,7 @@ CREATE TABLE IF NOT EXISTS `journal` (
 
 -- Dumping data for table koinkoin.journal: ~0 rows (approximately)
 /*!40000 ALTER TABLE `journal` DISABLE KEYS */;
-/*!40000 ALTER TABLE `journal` ENABLE KEYS */;
+
 
 -- Dumping structure for table koinkoin.koin
 CREATE TABLE IF NOT EXISTS `koin` (
@@ -129,7 +127,7 @@ INSERT INTO `koin` (`id`, `kode`, `nama`, `harga_maksimum`, `status`) VALUES
 	(23, 'CELO', 'CELO MARKET', 0, 0),
 	(24, 'BTG', 'BITCOIN GOLD MARKET', 0, 0),
 	(25, 'ATT', 'ATT MARKET', 0, 0);
-/*!40000 ALTER TABLE `koin` ENABLE KEYS */;
+
 
 -- Dumping structure for table koinkoin.saldo
 CREATE TABLE IF NOT EXISTS `saldo` (
@@ -142,7 +140,7 @@ CREATE TABLE IF NOT EXISTS `saldo` (
 /*!40000 ALTER TABLE `saldo` DISABLE KEYS */;
 INSERT INTO `saldo` (`key`, `saldo`) VALUES
 	('IDR', 0);
-/*!40000 ALTER TABLE `saldo` ENABLE KEYS */;
+
 
 -- Dumping structure for table koinkoin.stoped_koin
 CREATE TABLE IF NOT EXISTS `stoped_koin` (
@@ -157,7 +155,6 @@ CREATE TABLE IF NOT EXISTS `stoped_koin` (
 
 -- Dumping data for table koinkoin.stoped_koin: ~0 rows (approximately)
 /*!40000 ALTER TABLE `stoped_koin` DISABLE KEYS */;
-/*!40000 ALTER TABLE `stoped_koin` ENABLE KEYS */;
 
 -- Dumping structure for table koinkoin.transaksi
 CREATE TABLE IF NOT EXISTS `transaksi` (
@@ -180,8 +177,16 @@ CREATE TABLE IF NOT EXISTS `transaksi` (
 
 -- Dumping data for table koinkoin.transaksi: ~0 rows (approximately)
 /*!40000 ALTER TABLE `transaksi` DISABLE KEYS */;
-/*!40000 ALTER TABLE `transaksi` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+
+/*!40000 ALTER TABLE `countgl` ENABLE KEYS */;
+/*!40000 ALTER TABLE `transaksi` ENABLE KEYS */;
+/*!40000 ALTER TABLE `stoped_koin` ENABLE KEYS */;
+/*!40000 ALTER TABLE `saldo` ENABLE KEYS */;
+/*!40000 ALTER TABLE `koin` ENABLE KEYS */;
+/*!40000 ALTER TABLE `journal` ENABLE KEYS */;
+/*!40000 ALTER TABLE `harga` ENABLE KEYS */;
+/*!40000 ALTER TABLE `config` ENABLE KEYS */;
